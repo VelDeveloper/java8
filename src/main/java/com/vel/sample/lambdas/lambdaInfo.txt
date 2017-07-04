@@ -1,0 +1,7 @@
+1) What is the type of lambda expression ?
+
+Ans : In java everything has a type.
+
+2) Can i put Lambda in a variable ?
+
+3) Is a lambda expression an Object ? => In java everything is an object.So it is an object.
