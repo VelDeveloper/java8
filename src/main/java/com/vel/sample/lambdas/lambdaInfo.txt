@@ -1,7 +1,105 @@
+git : https://github.com/VelDeveloper/java8
+
+New Features in Java8 :
+
+1) It allows default method in interface.
+2) It allows to create static methods in interface.
+
 1) What is the type of lambda expression ?
 
-Ans : In java everything has a type.
+Ans : In java everything has a type.So here the type is functional interface.
+
+A functional interface is an interface with only one abstract method. ex) Runnable, comparator,FileFilter.
+
+In the functional interface, the methods from the object class don't count.
+
+we can define @FunctionalInterface it's just to notify the interface is a functional interface.
 
 2) Can i put Lambda in a variable ?
 
+Ans : Yes, we can put a lambda expression in a variable.
+
+Consequences : A lambda can be taken as a method paramter, and can be returned by a method.
+
 3) Is a lambda expression an Object ? => In java everything is an object.So it is an object.
+
+Ans : But Lambda expression is not an object.
+A lambda expression is created without using "new" on the other hand we will define anonymous class using new operator.
+So JVM will not create any memory for executing lambda expression.
+
+Exact answer : A lambda is an object without any identity.
+
+Java.util.function provides 4-categories.
+
+1) Supplier
+
+@FunctionalInterface
+public interface Supplier<T> {
+
+T get();
+
+}
+
+2)
+a) Consumer = >It's the reverse of supplier
+
+@FunctionalInterface
+public interface Consumer<T> {
+
+void accept(T t);
+
+}
+
+b) Bi Consumer
+
+@FunctionalInterface
+public interface BiConsumer<T,U> {
+
+void accept(T t, U u); //both the type are different
+
+}
+
+3)
+a) Predicate
+
+@FunctionalInterface
+public interface Predicate<T> {
+
+boolean test(T t);
+
+}
+
+b) Bi Predicate
+
+@FunctionalInterface
+public interface BiPredicate<T,U> {
+
+boolean test(T t, U u); //both the type are different
+
+}
+
+4) Function
+
+a) Function
+
+@FunctionalInterface
+public interface Function<T,R> {
+
+R apply(T t);
+
+}
+
+b) Bi Function
+
+@FunctionalInterface
+public interface BiFunction<T,U,R> {
+
+R apply(T t, U u); //both the type are different
+
+}
+*The reduction of an empty Stream is the identity element.
+*If the stream has only one element, then the reduction is that element.
+
+Apart from those methods it's also exposed multiple default & static methods.
+The function will also implement sometimes unary operator & Binary operator.
+

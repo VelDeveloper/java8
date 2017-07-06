@@ -23,6 +23,11 @@ public class ComparatorLambda {
         Comparator<String> compLambda = (String s1, String s2) ->
                 Integer.compare(s1.length(), s2.length());
 
+        //or
+
+        Comparator<String> compLambdaSkipType = (s1, s2) ->
+                Integer.compare(s1.length(), s2.length());
+
         List<String> list = Arrays.asList("***", "**", "****", "*");
         Collections.sort(list, compLambda);
 

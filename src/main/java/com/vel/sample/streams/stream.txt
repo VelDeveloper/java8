@@ -1,0 +1,45 @@
+Stream :
+
+It is not a collection,It seems like collection but it's not.
+It's an object on which one can define operations.
+An object that does not hold any data.
+It's an object that should not change the data it processes.
+An object able to process data in <<one pass>>
+An object optimized from the algorithm point of view, and able to process data in parallel.
+
+1) What does it do?
+
+It gives ways to efficiently process large amounts of data...and also smaller ones.
+
+2) What does efficiently mean?
+2 Things :
+a) I parallel, to leverage the computing power of multicore CPUs.
+b) Pipelined, to avoid unnecessary intermediary computations.
+
+3) Why can't a collection be a stream?
+Because Steam is a new concept, and we don't want to change tje way the collection API works.
+
+"An operation on a stream that returns a stream is called an intermediary operation" ex) Filter method.
+
+map() returns a Stream, so it is an intermediary operation.A mapper is modeled by the Function interface "Function".
+
+Java8 : also supports Flatmapping Operation.
+ex) <R> Stream<R> flatMap(Function<T, Stream<R>> flatMapper);
+
+<R> Stream<R> map(Function<T, R> mapper);
+
+a) If the flapMap was a regular map, it would return a Stream<Stream<R>>
+
+Reductions:
+1) Available reductions:
+a) max(), min(), count().
+
+2) Boolean reductions
+a) allMatch() => If it returns true for all the elements,noneMatch(),anyMatch().
+
+3) Reductions that return an optional.
+a) findFirst(),findAny()
+
+Reductions are terminal operations.
+
+

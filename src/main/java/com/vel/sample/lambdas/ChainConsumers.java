@@ -20,7 +20,8 @@ public class ChainConsumers {
         
         Consumer<String> c1 = System.out::println;
         Consumer<String> c2 = result::add;
-        
+        strings.forEach(c1);
+        System.out.println("------------------");
         strings.forEach(c1.andThen(c2));
         System.out.println("size of result = " + result.size());
     }
