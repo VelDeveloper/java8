@@ -42,4 +42,7 @@ a) findFirst(),findAny()
 
 Reductions are terminal operations.
 
+Java 8 : Also supports "spliterator()" => It can able to split the collection or streams.
+
+
 

@@ -1,6 +1,7 @@
 git : https://github.com/VelDeveloper/java8
 
 New Features in Java8 :
+Lambda expression is a way of passing parameters to a method.
 
 1) It allows default method in interface.
 2) It allows to create static methods in interface.
@@ -103,3 +104,4 @@ R apply(T t, U u); //both the type are different
 Apart from those methods it's also exposed multiple default & static methods.
 The function will also implement sometimes unary operator & Binary operator.
 
+Method References are basically an alternative syntax for lambda expressions.
