@@ -2,7 +2,9 @@ package com.vel.sample.streams;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Function;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
@@ -36,5 +38,24 @@ public class FilterMapExample {
         list.stream()
                 .flatMap(flatMapper)
                 .forEach(System.out::println);
+        System.out.println("-------------------------");
+        List<Integer> ints = Arrays.asList(0,1,2,3,4);
+        Stream<Integer> stream = ints.stream();
+        stream.forEach(System.out::println);
+        System.out.println("------------Stream1-------------");
+        Stream<Integer> stream1 = Stream.of(0,1,2,3,4);
+        stream1.forEach(System.out::println);
+
+        System.out.println("------------Stream2-------------");
+        Stream<String> streamOfString = Stream.generate(() -> "one");
+        streamOfString.limit(5).forEach(System.out::println);
+
+        System.out.println("------------Stream3-------------");
+        Stream<String> streamOfString1 = Stream.iterate("+",s -> s + "+");
+        streamOfString1.limit(5).forEach(System.out::println);
+
+        System.out.println("------------IntStream-------------");
+        IntStream streamOfInt = ThreadLocalRandom.current().ints();
+        streamOfInt.limit(5).forEach(System.out::println);
     }
 }
